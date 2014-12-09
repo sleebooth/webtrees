@@ -59,6 +59,13 @@ if (WT_USE_GOOGLE_API) {
 	define('WT_JQUERY_URL',        WT_STATIC_URL . 'js/jquery-1.11.1.js');
 	define('WT_JQUERYUI_URL',      WT_STATIC_URL . 'js/jquery-ui-1.11.2.js');
 }
+define('WT_BOOTSTRAP_CSS_URL',               WT_STATIC_URL . 'bootstrap-3.3.1/css/bootstrap.min.css');
+define('WT_BOOTSTRAP_JS_URL',                WT_STATIC_URL . 'bootstrap-3.3.1/js/bootstrap.min.js');
+define('WT_BOOTSTRAP_RTL_CSS_URL',           WT_STATIC_URL . 'bootstrap-rtl-3.2.0/css/bootstrap-rtl.min.css');
+define('WT_DATATABLES_BOOTSTRAP_JS_URL',     WT_STATIC_URL . 'datatables-1.10.0/plugins/datatables.bootstrap.js');
+define('WT_DATATABLES_BOOTSTRAP_CSS_URL',    WT_STATIC_URL . 'datatables-1.10.0/plugins/datatables.bootstrap.css');
+define('WT_DATATABLES_JS_URL',               WT_STATIC_URL . 'datatables-1.10.0/jquery.datatables.js');
+define('WT_FONT_AWESOME_CSS_URL',            WT_STATIC_URL . 'font-awesome-4.1.0/css/font-awesome.min.css');
 define('WT_JQUERY_COLORBOX_URL',   WT_STATIC_URL . 'js/jquery.colorbox-1.5.14.js');
 define('WT_JQUERY_COOKIE_URL',     WT_STATIC_URL . 'js/jquery.cookie-1.4.1.js');
 define('WT_JQUERY_DATATABLES_URL', WT_STATIC_URL . 'js/jquery.datatables-1.10.3.js');
@@ -231,7 +238,6 @@ if (isset($_SERVER['HTTP_X_FORWARDED_PORT'])) {
 } else {
 	$port = '80';
 }
-
 define('WT_SERVER_NAME',
 	$protocol . '://' .
 	(empty($_SERVER['SERVER_NAME']) ? '' : $_SERVER['SERVER_NAME']) .
