@@ -639,8 +639,8 @@ $source_types = array(
 		<div class="col-sm-9">
 			<select id="CONTACT_USER_ID" name="CONTACT_USER_ID" class="form-control">
 				<option value=""></option>
-				<?php foreach (User::all() as $user) {
-					<?php if (Auth::isMember($WT_TREE, $user)) {
+				<?php foreach (User::all() as $user): ?>
+					<?php if (Auth::isMember($WT_TREE, $user)): ?>
 						<option value="<?php echo $user->getUserId(); ?>" selected="<?php echo $WT_TREE->getPreference('CONTACT_USER_ID') === $user->getUserId() ? 'selected' : ''; ?>">
 						<?php echo WT_Filter::escapeHtml($user->getRealName()) . ' - ' . WT_Filter::escapeHtml($user->getUserName()); ?>
 						</option>
@@ -661,8 +661,8 @@ $source_types = array(
 		<div class="col-sm-9">
 			<select id="WEBMASTER_USER_ID" name="WEBMASTER_USER_ID" class="form-control">
 				<option value=""></option>
-				<?php foreach (User::all() as $user) {
-					<?php if (Auth::isMember($WT_TREE, $user)) {
+				<?php foreach (User::all() as $user): ?>
+					<?php if (Auth::isMember($WT_TREE, $user)): ?>
 						<option value="<?php echo $user->getUserId(); ?>" selected="<?php echo $WT_TREE->getPreference('WEBMASTER_USER_ID') === $user->getUserId() ? 'selected' : ''; ?>">
 						<?php echo WT_Filter::escapeHtml($user->getRealName()) . ' - ' . WT_Filter::escapeHtml($user->getUserName()); ?>
 						</option>

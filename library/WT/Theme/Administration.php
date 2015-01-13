@@ -48,6 +48,16 @@ class Administration extends BaseTheme {
 	}
 
 	/** {@inheritdoc} */
+	protected function formatPrimaryMenuBar() {
+		return 'this is the menu';
+	}
+
+	/** {@inheritdoc} */
+	protected function headerContent() {
+		return 'this is the header';
+	}
+
+	/** {@inheritdoc} */
 	public function hookFooterExtraJavascript() {
 		return
 			'<script src="' . WT_BOOTSTRAP_JS_URL . '"></script>' .
