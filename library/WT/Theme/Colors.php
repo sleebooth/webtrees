@@ -73,10 +73,10 @@ class Colors extends BaseTheme {
 	}
 
 	/** {@inheritdoc} */
-	protected function formatSecondaryMenuBar() {
+	protected function formatSecondaryMenu() {
 		return
 			'<ul class="secondary-menu" role="menubar">' .
-			implode('', $this->menuBarUser()) .
+			implode('', $this->secondaryMenu()) .
 			'<li>' .
 			$this->formQuickSearch() .
 			'</li>' .
@@ -86,7 +86,7 @@ class Colors extends BaseTheme {
 	protected function headerContent() {
 		return
 			$this->formatTreeTitle() .
-			$this->formatSecondaryMenuBar();
+			$this->formatSecondaryMenu();
 	}
 
 	/** {@inheritdoc} */
@@ -173,8 +173,8 @@ class Colors extends BaseTheme {
 	 *
 	 * @return WT_Menu[]
 	 */
-	protected function menuBarUser() {
-		$menubar = parent::menuBarUser();
+	protected function secondaryMenu() {
+		$menubar = parent::secondaryMenu();
 		$menubar[] = $this->menuPalette();
 
 		return $menubar;

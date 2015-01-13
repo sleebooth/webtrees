@@ -47,7 +47,7 @@ class Xenea extends BaseTheme {
 			$this->formQuickSearch() .
 		'</div>' .
 		'<div class="header-lower">' .
-			$this->formatSecondaryMenuBar() .
+			$this->formatSecondaryMenu() .
 		'</div>';
 	}
 

@@ -67,11 +67,11 @@ abstract class BaseTheme {
 	 */
 	public function bodyHeader() {
 		return
-			'<body>' .
+			'<body class="container">' .
 			'<header>' .
 			$this->headerContent() .
 			'<nav>' .
-			$this->formatPrimaryMenuBar() .
+			$this->formatPrimaryMenu() .
 			'</nav>' .
 			'</header>' .
 			'<main id="content" role="main">' .
@@ -111,7 +111,7 @@ abstract class BaseTheme {
 	}
 
 	/**
-	 * Create contact link for genealogy support.
+	 * Create contact link for both technical and genealogy support.
 	 *
 	 * @param User $user
 	 *
@@ -284,8 +284,8 @@ abstract class BaseTheme {
 	 *
 	 * @return string
 	 */
-	protected function formatPrimaryMenuBar() {
-		$menus = $this->menuBarMain();
+	protected function formatPrimaryMenu() {
+		$menus = $this->primaryMenu();
 		array_walk($menus, function (&$menu) { $menu = $this->formatMainMenuItem($menu); });
 
 		return '<ul class="primary-menu" role="menubar">' . implode('', $menus) . '</ul>';
@@ -333,10 +333,10 @@ abstract class BaseTheme {
 	 *
 	 * @return string
 	 */
-	protected function formatSecondaryMenuBar() {
+	protected function formatSecondaryMenu() {
 		return
 			'<ul class="secondary-menu" role="menubar">' .
-			implode('', $this->menuBarUser()) .
+			implode('', $this->secondaryMenu()) .
 			'</ul>';
 	}
 
@@ -441,7 +441,7 @@ abstract class BaseTheme {
 	protected function headerContent() {
 		return
 			$this->logoHeader() .
-			$this->formatSecondaryMenuBar() .
+			$this->formatSecondaryMenu() .
 			$this->formatTreeTitle() .
 			$this->formQuickSearch();
 	}
@@ -848,7 +848,7 @@ abstract class BaseTheme {
 	 *
 	 * @return WT_Menu[]
 	 */
-	protected function menuBarMain() {
+	protected function primaryMenu() {
 		global $controller;
 
 		$individual = $controller->getSignificantIndividual();
@@ -869,7 +869,7 @@ abstract class BaseTheme {
 	 *
 	 * @return WT_Menu[]
 	 */
-	protected function menuBarUser() {
+	protected function secondaryMenu() {
 		return array_filter(array(
 			$this->menuPendingChanges(),
 			$this->menuLogin(),
@@ -879,6 +879,27 @@ abstract class BaseTheme {
 			$this->menuLanguages(),
 			$this->menuThemes(),
 		));
+	}
+
+	/**
+	 * @return WT_Menu
+	 */
+	protected function menuAdminModules() {
+		return new WT_Menu(WT_I18N::translate('Calendar'), '#', 'menu-calendar');
+	}
+
+	/**
+	 * @return WT_Menu
+	 */
+	protected function menuAdminSite() {
+		return new WT_Menu(WT_I18N::translate('Calendar'), '#', 'menu-calendar');
+	}
+
+	/**
+	 * @return WT_Menu
+	 */
+	protected function menuAdminTrees() {
+		return new WT_Menu(WT_I18N::translate('Calendar'), '#', 'menu-calendar');
 	}
 
 	/**

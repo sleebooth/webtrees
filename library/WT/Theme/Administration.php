@@ -48,8 +48,8 @@ class Administration extends BaseTheme {
 	}
 
 	/** {@inheritdoc} */
-	protected function formatPrimaryMenuBar() {
-		return 'this is the menu';
+	protected function formatPrimaryMenu() {
+		return parent::formatPrimaryMenu();
 	}
 
 	/** {@inheritdoc} */
@@ -76,6 +76,15 @@ class Administration extends BaseTheme {
 			' title: function() { return jQuery(this).data("title"); }' .
 			'});' .
 			'</script>';
+	}
+
+	/** {@inheritdoc} */
+	protected function primaryMenu() {
+		return array_filter(array_merge(array(
+			$this->menuAdminSite(),
+			$this->menuAdminTrees(),
+			$this->menuAdminModules(),
+		)));
 	}
 
 	/** {@inheritdoc} */

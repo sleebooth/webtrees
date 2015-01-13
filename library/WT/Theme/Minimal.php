@@ -39,10 +39,10 @@ class Minimal extends BaseTheme {
 	}
 
 	/** {@inheritdoc} */
-	protected function formatSecondaryMenuBar() {
+	protected function formatSecondaryMenu() {
 		return
 			'<ul class="secondary-menu" role="menubar">' .
-			implode('', $this->menuBarUser()) .
+			implode('', $this->secondaryMenu()) .
 			'<li>' .
 			$this->formQuickSearch() .
 			'</li>' .
@@ -52,7 +52,7 @@ class Minimal extends BaseTheme {
 	protected function headerContent() {
 		return
 			$this->formatTreeTitle() .
-			$this->formatSecondaryMenuBar();
+			$this->formatSecondaryMenu();
 	}
 
 	/** {@inheritdoc} */

@@ -244,7 +244,7 @@ $privacy = array(
 );
 
 // We have two fields in one
-$CALENDAR_FORMATS = explode('_and_', $CALENDAR_FORMAT . '_and_');
+$CALENDAR_FORMATS = explode('_and_', $WT_TREE->getPreference('CALENDAR_FORMAT') . '_and_');
 
 $surname_list_styles = array(
 	'style1' => /* I18N: Layout option for lists of surnames */ WT_I18N::translate('list'),
